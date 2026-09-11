@@ -1,6 +1,6 @@
 import { setupDiscord } from './discord.js';
 import { setupAtmosphere } from './atmosphere.js';
-import { loadCopy, setupLanguageSwitcher } from './content.js';
+import { loadCopy, setupLanguageSwitcher } from './content.js?v=040260d';
 
 setupDiscord();
 loadCopy().then(async state => {

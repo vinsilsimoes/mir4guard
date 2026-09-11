@@ -18,7 +18,7 @@ for (const locale of SUPPORTED_LOCALES) {
 }
 assert.equal(hosting.static.directory,'dist');
 assert.equal((html.match(/<h1[ >]/g)||[]).length,1,'The page needs one H1.');
-const references = [...html.matchAll(/(?:src|href)="(\/(?!\/)[^"]+)"/g)].map(m=>m[1]);
+const references = [...html.matchAll(/(?:src|href)="(\/(?!\/)[^"]+)"/g)].map(m=>m[1].split(/[?#]/, 1)[0]);
 references.push('/content.json', '/locales.json', '/editor.css');
 references.push(...[...css.matchAll(/url\(['"]?(\/[^)'"\s]+)/g)].map(m=>m[1]));
 references.push(...[...html.matchAll(/(\/assets\/[^\s",]+\.webp)/g)].map(m=>m[1]));
