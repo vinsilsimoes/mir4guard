@@ -16,9 +16,9 @@ Enquanto você escreve, o navegador guarda um rascunho local. A API de gravaçã
 
 Verificações: `npm run check` e `node --test scripts/editor-api.test.mjs`. Os testes de gravação utilizam uma cópia temporária dos textos e não alteram o conteúdo do site.
 
-## Convite do Discord — pendência de lançamento
+## Convite do Discord
 
-Edite **`dist/scripts/config.js`**, atribuindo o convite real à constante **`DISCORD_INVITE_URL`**. Aceita um convite HTTPS em `discord.gg` ou `discord.com/invite/`. Não há endereço fictício.
+O convite `https://discord.gg/UVWTv3MsT` está configurado em **`dist/scripts/config.js`**, na constante **`DISCORD_INVITE_URL`**, e é utilizado pelos dois botões. Para trocar, atribua outro convite HTTPS em `discord.gg` ou `discord.com/invite/`.
 
 Enquanto o valor estiver vazio ou inválido, os botões exibem “O convite da comunidade estará disponível em breve.” em uma região acessível de status. Quando configurado, ambos viram links HTML para o mesmo destino, abrindo em nova aba com `noopener noreferrer`. A navegação é nativa, sem esperar animações ou analytics. Nenhum analytics foi adicionado.
 
@@ -67,4 +67,4 @@ Texto e botão permanecem visíveis desde o HTML inicial. Há suporte a `prefers
 
 `dist/` é conteúdo autorado e deve ser preservado. `docs/art/` contém a fonte artística e seu prompt; `docs/qa/` contém evidências de revisão. `docs/brand/mir4guard-brand.zip` reúne os seis arquivos finais da marca. `node_modules/` é a instalação usada para reproduzir os derivados. `.task-tmp/` foi removido vazio ao concluir. Não existe processo de limpeza automática.
 
-O site foi registrado no Sites com acesso inicial privado e ainda não foi publicado. A implementação local está completa; o convite real permanece a única configuração necessária para o fluxo de entrada na comunidade.
+O site está registrado no Sites com acesso inicial privado. A publicação utiliza os arquivos estáticos de `dist/`; o editor e sua API de gravação continuam exclusivos do ambiente local. Os dois botões de entrada utilizam o convite informado pelo usuário.
