@@ -18,7 +18,7 @@ Verificações: `npm run check` e `node --test scripts/editor-api.test.mjs`. Os 
 
 ## Idiomas
 
-O seletor no cabeçalho oferece português, inglês e espanhol. O idioma inicial acompanha o navegador quando há uma tradução disponível; a escolha fica guardada neste navegador e também pode ser compartilhada pelo parâmetro `?lang=en` ou `?lang=es`. O português continua sendo a fonte editável pelo painel local; as traduções ficam em **`dist/locales.json`** e não alteram a animação ou o convite.
+O seletor no cabeçalho oferece português, inglês e espanhol. O idioma inicial acompanha `navigator.languages`/`navigator.language` quando há uma tradução disponível; uma escolha explícita pode ser compartilhada pelo parâmetro `?lang=en`, `?lang=es` ou `?lang=pt-BR`. O português continua sendo a fonte editável pelo painel local; as traduções ficam em **`dist/locales.json`** e não alteram a animação ou o convite.
 
 ## Convite do Discord
 

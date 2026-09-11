@@ -65,11 +65,16 @@ export function normalizeLocale(value) {
 export function localeFromEnvironment() {
   const queryLocale = normalizeLocale(new URLSearchParams(location.search).get('lang'));
   if (queryLocale) return queryLocale;
+  const browserLocales = Array.isArray(navigator.languages) ? navigator.languages : [navigator.language];
+  for (const browserLocale of browserLocales) {
+    const detectedLocale = normalizeLocale(browserLocale);
+    if (detectedLocale) return detectedLocale;
+  }
   try {
     const storedLocale = normalizeLocale(localStorage.getItem(LOCALE_STORAGE_KEY));
     if (storedLocale) return storedLocale;
   } catch { /* A blocked storage API does not prevent language selection. */ }
-  return normalizeLocale(navigator.language) || 'pt-BR';
+  return 'pt-BR';
 }
 
 export function renderLocale(locale, localeData, baseCopy) {
