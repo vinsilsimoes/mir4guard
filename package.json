@@ -1,0 +1,16 @@
+{
+  "name": "mir4guard",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node scripts/serve.mjs",
+    "check": "node scripts/check.mjs"
+  },
+  "devDependencies": {
+    "@fontsource/barlow": "5.2.8",
+    "@fontsource/cinzel": "5.2.8",
+    "gsap": "3.13.0",
+    "sharp": "0.34.3"
+  }
+}

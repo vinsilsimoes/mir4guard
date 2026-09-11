@@ -1,0 +1,89 @@
+/* Atmosphere planes are independent from the layout and interactive content. */
+.scene-camera {
+  position: absolute;
+  inset: -1.2%;
+  will-change: transform;
+}
+.scene-art {
+  inset: 0;
+  transform-origin: 73% 42%;
+}
+.scene-picture { display: block; width: 100%; height: 100%; }
+.world-effects {
+  position: absolute;
+  pointer-events: none;
+  overflow: hidden;
+  opacity: 0;
+}
+.world-effects[data-aligned='true'] { opacity: 1; }
+.water-flow { opacity: .5; mix-blend-mode: screen; }
+.dragon-cloud { pointer-events: none; will-change: transform, opacity; }
+.dragon-cloud-high { opacity: .3; }
+.dragon-cloud-low { opacity: .18; }
+.scene-light {
+  position: absolute;
+  top: -30%;
+  left: 44%;
+  width: 50%;
+  height: 110%;
+  opacity: .04;
+  transform: rotate(-18deg);
+  background: linear-gradient(108deg, transparent 20%, #e0d2b870 48%, transparent 64%);
+  filter: blur(35px);
+  mix-blend-mode: screen;
+  will-change: transform, opacity;
+}
+.mist {
+  background-image: url('/assets/mist-wisps.webp');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  filter: none;
+  will-change: transform, opacity;
+  mix-blend-mode: screen;
+}
+.mist-far {
+  inset: 16% auto auto 16%;
+  width: 110%;
+  height: 56%;
+  opacity: .28;
+}
+.mist-near {
+  inset: 47% auto auto 7%;
+  width: 119%;
+  height: 58%;
+  opacity: .22;
+  mask-image: linear-gradient(90deg, transparent, #000 34%, #000 89%, transparent);
+}
+.embers i {
+  background: #ffc083;
+  border-radius: 60% 20% 60% 40%;
+  box-shadow: 0 0 5px #e7734270;
+  opacity: 0;
+  will-change: transform, opacity;
+}
+.landing[data-motion='paused'] .scene-art,
+.landing[data-motion='paused'] .scene-camera,
+.landing[data-motion='paused'] .mist,
+.landing[data-motion='paused'] .scene-light,
+.landing[data-motion='paused'] .embers i,
+.landing[data-motion='paused'] .dragon-cloud { will-change: auto; }
+
+@media (max-width: 700px) {
+  .scene-camera { inset: -1% -1% auto; height: 36rem; }
+  .scene-art { inset: 0; height: 100%; transform-origin: 80% 28%; }
+  .scene-light { left: 15%; width: 100%; height: 65%; }
+  .mist-far { display: block; left: -40%; top: 14%; width: 180%; height: 31%; opacity: .22; }
+  .mist-near { left: -42%; top: 28%; width: 200%; height: 41%; opacity: .19; }
+  .embers i:nth-child(n+4) { display: block; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .scene-art, .scene-camera, .mist, .scene-light { will-change: auto; }
+  .scene-light { display: none; }
+  .mist-far { opacity: .14; }
+  .mist-near { opacity: .12; }
+  .embers { display: none; }
+  .water-flow { display: none; }
+  .dragon-cloud { will-change: auto; }
+  .dragon-cloud-high { opacity: .18; }
+  .dragon-cloud-low { opacity: .1; }
+}

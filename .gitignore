@@ -1,0 +1,4 @@
+node_modules/
+.task-tmp/
+.sites-runtime/
+.env

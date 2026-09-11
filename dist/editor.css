@@ -1,0 +1,52 @@
+.editor-launcher {
+  position: fixed; top: 104px; right: 24px; z-index: 20;
+  min-height: 40px; padding: 8px 15px; border: 1px solid #bca77c;
+  border-radius: 4px; background: #171d1d; color: #f2efe6;
+  font: 500 14px Barlow, sans-serif; box-shadow: 0 4px 18px #0005;
+}
+.editor-panel {
+  position: sticky; top: 0; z-index: 30; padding: 16px 24px;
+  display: grid; grid-template-columns: 1fr auto; gap: 12px 24px;
+  background: #171d1d; color: #f2efe6; border-bottom: 1px solid #7b6950;
+  font: 400 14px/1.4 Barlow, sans-serif;
+}
+.editor-heading { display: grid; gap: 3px; }
+.editor-heading strong { font-size: 16px; }
+.editor-heading span { color: #bcc5bf; }
+.editor-actions { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+.editor-panel button {
+  min-height: 40px; padding: 8px 13px; border: 1px solid #5e6a62;
+  border-radius: 4px; background: #252e2a; color: #f2efe6; font: inherit;
+}
+.editor-panel .editor-save { background: #9e2832; border-color: #c45058; }
+.editor-panel button:disabled { opacity: .55; cursor: wait; }
+.editor-cta-label { display: flex; align-items: center; gap: 12px; color: #cbd1c8; }
+.editor-cta-label input {
+  width: min(270px, 100%); min-width: 0; min-height: 40px; padding: 7px 10px;
+  border: 1px solid #778579; border-radius: 3px; background: #0e1412;
+  font: 400 16px Barlow, sans-serif; color: #f2efe6;
+}
+.editor-feedback { display: flex; align-items: center; gap: 16px; justify-content: flex-end; }
+.editor-feedback p { margin: 0; max-width: 350px; font-size: 13px; color: #c5d1bd; }
+.editor-feedback p[data-error='true'] { color: #ffb5ac; }
+.editor-panel .editor-undo { border: 0; background: none; color: #d5c3a0; font-size: 13px; text-decoration: underline; }
+.editor-panel input:focus-visible { outline: 2px solid #efd1a0; outline-offset: 3px; }
+.is-editing [data-copy][contenteditable] {
+  outline: 1px dashed #d2b68c90; outline-offset: 5px; border-radius: 2px;
+  cursor: text; min-width: 1ch; scroll-margin-top: 220px;
+}
+.is-editing [data-copy][contenteditable]:focus { outline: 2px solid #e1c391; background: #10141455; }
+.is-editing [data-copy][contenteditable]:empty::before { content: '\00a0'; }
+.is-editing [data-discord-position] { cursor: text; }
+@media (max-width: 760px) {
+  .editor-panel { padding: 12px 16px; grid-template-columns: 1fr; gap: 10px; }
+  .editor-heading { grid-template-columns: auto 1fr; gap: 12px; align-items: center; }
+  .editor-heading span { font-size: 12px; }
+  .editor-actions { gap: 6px; }
+  .editor-panel button { padding: 7px 10px; font-size: 13px; }
+  .editor-feedback { justify-content: space-between; gap: 8px; }
+  .editor-feedback p { font-size: 12px; }
+  .editor-cta-label { font-size: 13px; }
+  .editor-cta-label input { flex: 1; }
+  .is-editing [data-copy][contenteditable] { scroll-margin-top: 290px; }
+}
