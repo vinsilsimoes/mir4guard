@@ -1,0 +1,47 @@
+{
+  "pt-BR": {
+    "label": "Português",
+    "short": "PT",
+    "title": "MIR4GUARD | Comunidade de MIR4 no Discord",
+    "description": "Encontre aliados, compartilhe estratégias e faça parte da comunidade MIR4GUARD no Discord.",
+    "copy": {
+      "eyebrow": "NOVO SERVIDOR DE MIR4",
+      "headline": "NINGUÉM VENCE",
+      "headlineAccent": "SOZINHO.",
+      "description": "Encontre seus próximos aliados, compartilhe estratégias e viva MIR4 em um novo servidor MIR4GUARD.",
+      "ctaLabel": "Entrar no Discord",
+      "microcopy": "Sua próxima jornada começa no MIR4GUARD.",
+      "footer": "Comunidade independente. Sem vínculo oficial com MIR4."
+    }
+  },
+  "en": {
+    "label": "English",
+    "short": "EN",
+    "title": "MIR4GUARD | MIR4 community on Discord",
+    "description": "Find allies, share strategies, and join the MIR4GUARD community on Discord.",
+    "copy": {
+      "eyebrow": "NEW MIR4 SERVER",
+      "headline": "NO ONE WINS",
+      "headlineAccent": "ALONE.",
+      "description": "Find your next allies, share strategies, and experience MIR4 on the new MIR4GUARD server.",
+      "ctaLabel": "Join Discord",
+      "microcopy": "Your next journey starts with new allies.",
+      "footer": "Independent community. Not affiliated with MIR4."
+    }
+  },
+  "es": {
+    "label": "Español",
+    "short": "ES",
+    "title": "MIR4GUARD | Comunidad de MIR4 en Discord",
+    "description": "Encuentra aliados, comparte estrategias y únete a la comunidad MIR4GUARD en Discord.",
+    "copy": {
+      "eyebrow": "NUEVO SERVIDOR DE MIR4",
+      "headline": "NADIE VENCE",
+      "headlineAccent": "SOLO.",
+      "description": "Encuentra a tus próximos aliados, comparte estrategias y vive MIR4 en el nuevo servidor MIR4GUARD.",
+      "ctaLabel": "Entrar a Discord",
+      "microcopy": "Tu próxima aventura comienza con nuevos aliados.",
+      "footer": "Comunidad independiente. Sin vínculo oficial con MIR4."
+    }
+  }
+}

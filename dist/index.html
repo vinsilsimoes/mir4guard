@@ -80,11 +80,18 @@
         <a class="brand" href="/" aria-label="MIR4GUARD — início">
           <img src="/brand/mir4guard-horizontal.svg" width="548" height="68" alt="MIR4GUARD" />
         </a>
-        <button type="button" class="discord-cta discord-cta-header" data-discord-position="header" aria-describedby="invite-status">
-          <svg aria-hidden="true"><use href="#discord-icon" /></svg>
-          <span data-copy="ctaLabel">Entrar no Discord</span>
-          <svg class="cta-arrow" aria-hidden="true"><use href="#arrow-icon" /></svg>
-        </button>
+        <div class="header-actions">
+          <nav class="language-switcher" aria-label="Idioma">
+            <button type="button" data-language="pt-BR" aria-label="Português" aria-pressed="true">PT</button>
+            <button type="button" data-language="en" aria-label="English" aria-pressed="false">EN</button>
+            <button type="button" data-language="es" aria-label="Español" aria-pressed="false">ES</button>
+          </nav>
+          <button type="button" class="discord-cta discord-cta-header" data-discord-position="header" aria-describedby="invite-status">
+            <svg aria-hidden="true"><use href="#discord-icon" /></svg>
+            <span data-copy="ctaLabel">Entrar no Discord</span>
+            <svg class="cta-arrow" aria-hidden="true"><use href="#arrow-icon" /></svg>
+          </button>
+        </div>
       </header>
       <main id="main-content" class="hero">
         <div class="hero-content">

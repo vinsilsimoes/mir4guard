@@ -16,6 +16,10 @@ Enquanto você escreve, o navegador guarda um rascunho local. A API de gravaçã
 
 Verificações: `npm run check` e `node --test scripts/editor-api.test.mjs`. Os testes de gravação utilizam uma cópia temporária dos textos e não alteram o conteúdo do site.
 
+## Idiomas
+
+O seletor no cabeçalho oferece português, inglês e espanhol. O idioma inicial acompanha o navegador quando há uma tradução disponível; a escolha fica guardada neste navegador e também pode ser compartilhada pelo parâmetro `?lang=en` ou `?lang=es`. O português continua sendo a fonte editável pelo painel local; as traduções ficam em **`dist/locales.json`** e não alteram a animação ou o convite.
+
 ## Convite do Discord
 
 O convite `https://discord.gg/UVWTv3MsT` está configurado em **`dist/scripts/config.js`**, na constante **`DISCORD_INVITE_URL`**, e é utilizado pelos dois botões. Para trocar, atribua outro convite HTTPS em `discord.gg` ou `discord.com/invite/`.
@@ -53,6 +57,7 @@ Para recriar os arquivos otimizados e as versões da marca: `npm ci` e `node scr
 - `dist/atmosphere.css`: camadas de câmera, luz, névoa texturizada e brasas.
 - `dist/scripts/config.js`: configuração única do convite.
 - `dist/content.json`: textos salvos pelo editor local.
+- `dist/locales.json`: traduções em português, inglês e espanhol, incluindo título e descrição da página.
 - `dist/scripts/content.js`: validação e aplicação dos textos com nós de texto seguros.
 - `dist/scripts/text-editor.js` e `dist/editor.css`: edição por clique e painel local.
 - `scripts/editor-api.mjs`: gravação local com verificação de origem e revisão.

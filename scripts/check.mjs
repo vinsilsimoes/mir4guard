@@ -7,12 +7,19 @@ const root = resolve('dist');
 const html = await readFile(resolve(root, 'index.html'),'utf8');
 const css = await readFile(resolve(root, 'styles.css'),'utf8') + await readFile(resolve(root, 'atmosphere.css'),'utf8');
 const hosting = JSON.parse(await readFile('.openai/hosting.json','utf8'));
-const { validateCopy } = await import('../dist/scripts/content.js');
-validateCopy(JSON.parse(await readFile(resolve(root, 'content.json'),'utf8')));
+const { validateCopy, SUPPORTED_LOCALES } = await import('../dist/scripts/content.js');
+const baseCopy = validateCopy(JSON.parse(await readFile(resolve(root, 'content.json'),'utf8')));
+const locales = JSON.parse(await readFile(resolve(root, 'locales.json'),'utf8'));
+for (const locale of SUPPORTED_LOCALES) {
+  assert.ok(locales[locale], `Missing locale: ${locale}`);
+  assert.equal(typeof locales[locale].title, 'string', `Missing title: ${locale}`);
+  assert.equal(typeof locales[locale].description, 'string', `Missing description: ${locale}`);
+  validateCopy({...baseCopy, ...(locales[locale].copy || {})});
+}
 assert.equal(hosting.static.directory,'dist');
 assert.equal((html.match(/<h1[ >]/g)||[]).length,1,'The page needs one H1.');
 const references = [...html.matchAll(/(?:src|href)="(\/(?!\/)[^"]+)"/g)].map(m=>m[1]);
-references.push('/content.json', '/editor.css');
+references.push('/content.json', '/locales.json', '/editor.css');
 references.push(...[...css.matchAll(/url\(['"]?(\/[^)'"\s]+)/g)].map(m=>m[1]));
 references.push(...[...html.matchAll(/(\/assets\/[^\s",]+\.webp)/g)].map(m=>m[1]));
 for (const reference of new Set(references)) {
